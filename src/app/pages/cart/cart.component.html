@@ -1,0 +1,51 @@
+<section class="main-sec w-[90%] mx-auto dark:bg-gray-900 dark:text-gray-400">
+  <h2 class="text-green-700 text-center text-3xl mb-7">{{ "cart.shopCart" | translate }}</h2>
+  <div class="flex items-center justify-between">
+    <span class="text-green-700 text-center text-lg"
+    >{{ "cart.totalCartPrice" | translate }} : {{ cartDetails.totalCartPrice | currency : "GBP" }}
+    </span>
+    <button (click)="clearItems()" class="text-white bg-red-700 py-1 px-3 rounded text-sm ">{{ "cart.clear" | translate }}</button>
+  </div>
+
+
+  @for (prod of cartDetails.products; track prod.product.id) {
+  <div class="grid md:grid-cols-[10%_minmax(0,1fr)] border-b mb-2">
+    <div class="m-2">
+      <img
+        [src]="prod.product.imageCover"
+        class="w-full h-[100px] object-contain"
+        [alt]="prod.product.title"
+      />
+    </div>
+
+    <div class="flex justify-between items-center">
+      <div>
+        <h3>{{ prod.product.title }}</h3>
+        <h4>{{ "cart.price" | translate }} : {{ prod.price | currency : "GBP" }}</h4>
+        <button (click)="removeItem(prod.product.id)">
+          <i class="fas fa-trash-can text-green-700 me-1"></i>
+          {{ "cart.remove" | translate }}
+        </button>
+      </div>
+
+      <div class="flex justify-between items-center gap-4">
+        <button
+          (click)="updateCount(prod.product.id, prod.count + 1)"
+          class="text-3xl text-green-700"
+        >
+          <i class="fa-regular fa-square-plus"></i>
+        </button>
+        <span>{{ prod.count }}</span>
+        <button
+          (click)="updateCount(prod.product.id, prod.count - 1)"
+          class="text-3xl text-green-700"
+        >
+          <i class="fa-regular fa-square-minus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+
+  <button class="btn-main" [routerLink]="['/checkout', cartDetails._id]">{{ "cart.checkOut" | translate }}</button>
+</section>

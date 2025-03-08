@@ -1,0 +1,46 @@
+@if( detailsProduct){
+<section class="main-container">
+  <h1 class="text-3xl text-green-700 my-2 pb-7">{{ "home.detailsProduct" | translate }}</h1>
+  <div class="container">
+    <div class="row flex justify-items-center items-center">
+      <div class="col-md-3">
+        <div>
+          <img
+            [src]="detailsProduct.imageCover"
+            class="w-[50%]"
+            [alt]="detailsProduct.title"
+          />
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h2 class="font-semibold text-2xl mb-2">{{ detailsProduct.title }}</h2>
+        <p class="font-light">{{ detailsProduct.description }}</p>
+        <h3 class="">
+          {{ detailsProduct.category.name }}
+        </h3>
+
+        <div class="card-body px-2 py-2">
+          <div class="flex justify-between items-center">
+            <span>{{ detailsProduct.price }} EGP</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-300"></i>
+              <span class="text-gray-500">{{
+                detailsProduct.ratingsAverage
+
+              }}</span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="bg-green-700 text-white py-2 px-10 border rounded w-[99%] block mx-auto"
+          (click)="addCartItem(detailsProduct._id)"
+        >
+
+          +{{ "home.addToCart" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+}

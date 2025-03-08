@@ -1,0 +1,53 @@
+
+<section class="main-container">
+  <h2 class="pb-4 text-4xl">{{ "home.all" | translate }} <span class=" text-green-700">{{ "home.products" | translate }}</span></h2>
+  <div class="mb-4">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search for a product..."
+      class="w-full p-3 border border-green-400/50 focus:shadow-none rounded-lg focus:outline-none focus:border-green-700  focus:ring-green-700"
+    />
+  </div>
+
+  <div  class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-10">
+    @for (prod of filteredProducts(); track prod._id) {
+    <div
+      class="card border border-green-400/50 rounded-md overflow-hidden shadow-lg relative"
+    >
+      <div [routerLink]="['/details', prod.id]">
+        <div class="card-img">
+          <img
+            [src]="prod.imageCover"
+            class="w-full h-[150px] object-contain"
+            [alt]="prod.title"
+          />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-500 text-xs">{{ prod.category.name }}</h4>
+          <h3 class="font-medium">{{ prod.title.split(" ", 2).join(" ") }}</h3>
+          <div class="flex justify-between items-center">
+            <span>{{ prod.price | currency : "GBP" }}</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-300"></i>
+              <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="addCartItem(prod.id)"
+        class="bg-green-700 text-white py-2 px-10 border rounded w-[99%] block mx-auto"
+      >
+      {{ "home.addToCart" | translate }}
+      </button>
+    </div>
+  }
+
+  </div>
+  
+</section>
+
+
+
+

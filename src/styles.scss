@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+body {
+  font-family: "Nunito", serif;
+  // font-family: "Lato", serif;
+  // font-family: "Playfair Display", serif;
+}
+
+.btn-main {
+  @apply bg-green-700 text-white px-12 py-2 mt-2 rounded border disabled:bg-gray-900 hover:bg-green-900 transition-colors duration-500;
+
+}
+.main-sec {
+  @apply bg-gray-50 rounded border shadow p-4;
+}
+.main-container{
+  @apply  container mx-auto px-4 sm:px-6 lg:px-8;
+}

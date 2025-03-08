@@ -1,0 +1,53 @@
+<section class="main-sec w-[90%] sm:w-3/4 md:w-1/2 mx-auto dark:bg-gray-900 dark:text-gray-400">
+  <h2 class="text-green-700 text-center text-3xl">{{ "checkout.checkOut" | translate }}</h2>
+
+  <form [formGroup]="checkOutForm" (ngSubmit)="submitForm()">
+    <div class="mb-1">
+      <label
+        for="details"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.details" | translate }}</label
+      >
+      <textarea
+        formControlName="details"
+        id="details"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-700 focus:border-green-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-700 dark:focus:border-green-700"
+      ></textarea>
+    </div>
+
+    <div class="mb-1">
+      <label
+        for="phone"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.phone" | translate }}</label
+      >
+      <input
+        formControlName="phone"
+        type="tel"
+        id="phone"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-700 focus:border-green-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-700 dark:focus:border-green-700"
+      />
+    </div>
+    <div class="mb-1">
+      <label
+        for="city"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.city" | translate }}</label
+      >
+      <input
+        formControlName="city"
+        type="text"
+        id="city"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-700 focus:border-green-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-700 dark:focus:border-green-700"
+      />
+    </div>
+    <div class="mt-4 flex flex-col sm:flex-row sm:justify-between gap-4 items-center  center">
+      <button [disabled]="checkOutForm.invalid" class="btn-main" type="submit">
+        {{ "checkout.onlinePayment" | translate }}
+      </button>
+      <button type="button" [routerLink]="['/allorders']" [disabled]="checkOutForm.invalid" class="btn-main">
+        {{ "checkout.cashPayment" | translate }}
+      </button>
+    </div>
+  </form>
+</section>

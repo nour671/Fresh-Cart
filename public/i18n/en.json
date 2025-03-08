@@ -1,0 +1,93 @@
+{
+
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "lang":"Lang",
+    "logout": "Logout",
+     "login": "Login",
+    "register": "Register"
+  },
+
+  "home": {
+
+    "popular": "Popular",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "all":"All",
+    "addToCart":"Add To Cart",
+    "detailsProduct":"Details Product"
+  },
+  "cart": {
+
+    "shopCart": "Shop Cart",
+    "totalCartPrice": "Total Cart Price",
+    "clear": "Clear",
+    "price": "Price",
+    "remove": "Remove",
+    "checkOut": "Check Out"
+
+  },
+  "checkout": {
+    "checkOut": "Check Out",
+    "details": "Details",
+    "phone": "Phone",
+    "city": "City",
+    "onlinePayment": "Online Payment",
+    "cashPayment": "Cash Payment"
+  },
+  "orderDetails": {
+    "title": "Orders",
+    "orderID": "ID",
+    "price": "Price",
+    "quantity": "Quantity",
+    "phone": "Phone",
+    "totalPrice": "Total Price",
+    "backToOrders": "Back To Orders",
+    "loading": "Loading..."
+  },
+
+
+
+  "register": {
+    "title": "Register Now",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "rePassword": "Confirm Password",
+    "phone": "Phone",
+    "registerButton": "Register"
+  },
+
+  "login": {
+    "title": "Login Now",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword":"Forgot Password",
+    "loginButton": "Login"
+  },
+  "auth": {
+    "forgotPassword": "Forgot Password",
+    "email": "Email",
+    "verifyEmail": "Verify Email",
+    "resetCode": "Reset Code",
+    "verifyCode": "Verify Code",
+    "newPassword": "New Password",
+    "resetPassword": "Reset Password"
+  },
+  "footer": {
+    "title": "Get the FreshCart app",
+    "description": "We will send you a link, open it on your phone to download the app.",
+    "emailPlaceholder": "Email ..",
+    "shareButton": "Share App Link",
+    "partners": "Payment Partners",
+    "delivery": "Get deliveries with FreshCart"
+  },
+  "notFound": {
+    "title": "Oops! Page Not Found"
+
+  }
+}

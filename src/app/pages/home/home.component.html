@@ -1,0 +1,113 @@
+<section >
+  <div class="grid sm:grid-cols-[100%] gap-1 md:grid-cols-[70%_minmax(0,1fr)] mb-6  ">
+    <div class=" hidden md:block shadow-md rounded-lg overflow-hidden" >
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img
+            src="/images/img1.avif"
+            alt="slider image"
+            class="w-full h-[300px] "
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img2.avif"
+            alt="slider image"
+            class="w-full  h-[300px] "
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img3.avif"
+            alt="slider image"
+            class="w-full  h-[300px] "
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img4.avif"
+            alt="slider image"
+            class="w-full  h-[300px] "
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img5.avif"
+            alt="slider image"
+            class="w-full  h-[300px] "
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img6.avif"
+            alt="slider image"
+            class="w-full  h-[300px] "
+          />
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class=" hidden md:flex flex-col  shadow-md rounded-lg overflow-hidden">
+      <img
+        src="/images/grocery-banner.png"
+        alt="slider image"
+        class="w-full h-[150px]  "
+      />
+      <img
+        src="/images/grocery-banner-2.jpeg"
+        alt="slider image"
+        class="w-full h-[150px]  "
+      />
+    </div>
+  </div>
+</section>
+
+
+<section class="main-container ">
+  <h2 class="pb-7 text-4xl">{{ "home.popular" | translate }} <span class=" text-green-700">{{ "home.categories" | translate }}</span></h2>
+  <owl-carousel-o [options]="customOptions">
+    @for (cat of categories; track cat._id) {
+    <ng-template carouselSlide>
+      <img [src]="cat.image" [alt]="cat.name" class="w-full h-[250px]" />
+      <h3 class="text-green-700 mt-2 text-center">{{ cat.name }}</h3>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</section>
+
+<section class="main-container">
+  <h2 class="pb-7  text-4xl">{{ "home.popular" | translate }}  <span class=" text-green-700">{{ "home.products" | translate }} </span></h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (prod of products.slice(0,12); track prod.id) {
+    <div
+      class="card border border-green-400/50 rounded-md overflow-hidden shadow-lg relative"
+    >
+      <div [routerLink]="['/details', prod.id]">
+        <div class="card-img">
+          <img
+            [src]="prod.imageCover"
+            class="w-full h-[250px] object-contain"
+            [alt]="prod.title"
+          />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-500 text-xs">{{ prod.category.name }}</h4>
+          <h3 class="font-medium">{{ prod.title.split(" ", 2).join(" ") }}</h3>
+          <div class="flex justify-between items-center">
+            <span>{{ prod.price | currency : "GBP" }}</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-300"></i>
+              <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="addCartItem(prod.id)"
+        class="bg-green-700 text-white py-2 px-10 border rounded w-[99%] block mx-auto"
+      >
+      {{ "home.addToCart" | translate }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

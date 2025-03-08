@@ -1,0 +1,99 @@
+{
+
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "التصنيفات",
+    "brands": "العلامات التجارية",
+    "lang":"اللغة",
+    "logout": "تسجيل الخروج",
+     "login": "تسجيل الدخول",
+    "register": "إنشاء حساب"
+  },
+  "home": {
+    "popular": "الأكثر شهرة",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "all": "كل",
+    "addToCart":"أضف إلى السلة",
+    "detailsProduct": "تفاصيل المنتج"
+  },
+
+  "cart": {
+    "shopCart": "سلة التسوق",
+    "totalCartPrice": "إجمالي سعر السلة",
+    "clear": "مسح",
+    "price": "السعر",
+    "remove": "إزالة",
+    "checkOut": "الدفع",
+    "addToCart": "أضف إلى السلة"
+  },
+  "checkout": {
+    "details": "التفاصيل",
+    "phone": "الهاتف",
+    "city": "المدينة",
+    "onlinePayment": "الدفع الإلكتروني",
+    "cashPayment": "الدفع نقدًا"
+  },
+  "orderDetails": {
+    "title": " الطلبات",
+    "orderID": "رقم الطلب",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "phone": "رقم الهاتف",
+    "totalPrice": "إجمالي السعر",
+    "shipping": "عنوان الشحن",
+    "backToOrders": "العودة إلى الطلبات",
+    "loading": "جاري التحميل..."
+  },
+
+
+
+
+  "register": {
+    "title": "سجل الآن",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "rePassword": "تأكيد كلمة المرور",
+    "phone": "رقم الهاتف",
+    "registerButton": "تسجيل"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword":"نسيت كلمة المرور",
+    "loginButton": "تسجيل الدخول"
+  },
+  "auth": {
+    "forgotPassword": "نسيت كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "verifyEmail": "تأكيد البريد الإلكتروني",
+    "resetCode": "رمز إعادة التعيين",
+    "verifyCode": "تحقق من الرمز",
+    "newPassword": "كلمة المرور الجديدة",
+    "resetPassword": "إعادة تعيين كلمة المرور"
+  }
+  ,
+  "footer": {
+    "title": "احصل على تطبيق فريش كارت",
+    "description": "سنرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق.",
+    "emailPlaceholder": "البريد الإلكتروني ..",
+    "shareButton": "مشاركة رابط التطبيق",
+
+  "partners": "شركاء الدفع",
+  "delivery": "احصل على توصيل مع فريش كارت"
+  } ,
+  "notFound": {
+    "title": "عذرًا! الصفحة غير موجودة"
+
+  }
+}
+
+
+
+
+
+

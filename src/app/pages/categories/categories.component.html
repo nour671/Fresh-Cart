@@ -1,0 +1,27 @@
+
+<section class="main-container">
+  <h2 class="pb-4 text-4xl">{{ "home.all" | translate }} <span class=" text-green-700">{{ "home.categories" | translate }}</span></h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (cat of categories; track cat._id) {
+    <div
+      class="card border border-green-400/50 rounded-md overflow-hidden shadow-lg relative hover:scale-110 transition-all duration-500"
+    >
+      <div  >
+        <div class="card-img">
+          <img
+            [src]="cat.image"
+            class="w-full h-[150px] object-contain"
+            [alt]="cat.slug"
+          />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-500 text-lg">{{ cat.name }}</h4>
+
+
+        </div>
+      </div>
+
+    </div>
+    }
+  </div>
+</section>
