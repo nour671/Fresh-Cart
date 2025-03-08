@@ -15,6 +15,33 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+
+
+
+const serverConfig = provideServerRenderingConfig({
+  routes: {
+    'allorders/:id': {
+      getPrerenderParams: async () => {
+        return [
+          { id: '123' }, // حط هنا القيم اللي عايز تجهزها وقت الـ prerender
+          { id: '456' },
+        ];
+      }
+    },
+    'checkout/:id': {
+      getPrerenderParams: async () => {
+        return [
+          { id: '789' },
+          { id: '101' },
+        ];
+      }
+    }
+  }
+});
+
+
+
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -65,3 +92,7 @@ if (isMainModule(import.meta.url)) {
  * The request handler used by the Angular CLI (dev-server and during build).
  */
 export const reqHandler = createNodeRequestHandler(app);
+function provideServerRenderingConfig(arg0: { routes: { 'allorders/:id': { getPrerenderParams: () => Promise<{ id: string; }[]>; }; 'checkout/:id': { getPrerenderParams: () => Promise<{ id: string; }[]>; }; }; }) {
+  throw new Error('Function not implemented.');
+}
+
