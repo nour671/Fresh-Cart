@@ -1,17 +1,16 @@
+
 {
+  "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/fresh-cart"
-      }
+      "src": "dist/fresh-cart/server/main.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "dist/fresh-cart/server/main.js"
     }
   ]
 }

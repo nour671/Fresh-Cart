@@ -1,1 +1,6 @@
-/*# sourceMappingURL=auth-layout.component.css.map */
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}/*# sourceMappingURL=auth-layout.component.css.map */
