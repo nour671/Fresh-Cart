@@ -4,6 +4,7 @@ import { loggedGuard } from './core/guards/logged.guard';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './layout/blank-layout/blank-layout.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -17,11 +18,11 @@ export const routes: Routes = [
     {path:'cart',loadComponent:()=>import("./pages/cart/cart.component").then((c)=>c.CartComponent) ,title:'cart'},
     {path:'products',loadComponent:()=>import("./pages/products/products.component").then((c)=>c.ProductsComponent) ,title:'products'},
     {path:'allorders',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products'},
-    {path:'allorders/:id',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products'},
+    {path:'allorders/:id',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products' ,data:{RenderMode:'client'}},
     {path:'brands',loadComponent:()=>import("./pages/brands/brands.component").then((c)=>c.BrandsComponent) ,title:'brands'},
     {path:'categories',loadComponent:()=>import("./pages/categories/categories.component").then((c)=>c.CategoriesComponent) ,title:'categories'},
-    {path:'checkout/:id',loadComponent:()=>import("./pages/checkout/checkout.component").then((c)=>c.CheckoutComponent) ,title:'checkout'},
-    {path:'details/:id',loadComponent:()=>import("./pages//details/details.component").then((c)=>c.DetailsComponent) ,title:'details'},
+    {path:'checkout/:id',loadComponent:()=>import("./pages/checkout/checkout.component").then((c)=>c.CheckoutComponent) ,title:'checkout',data:{RenderMode:'client'}},
+    {path:'details/:id',loadComponent:()=>import("./pages//details/details.component").then((c)=>c.DetailsComponent) ,title:'details',data:{RenderMode:'client'}},
     {path:'**',component:NotfoundComponent}
   ]},
 ];
