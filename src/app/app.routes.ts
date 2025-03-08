@@ -18,11 +18,11 @@ export const routes: Routes = [
     {path:'cart',loadComponent:()=>import("./pages/cart/cart.component").then((c)=>c.CartComponent) ,title:'cart'},
     {path:'products',loadComponent:()=>import("./pages/products/products.component").then((c)=>c.ProductsComponent) ,title:'products'},
     {path:'allorders',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products'},
-    {path:'allorders/:id',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products' ,data:{RenderMode:'dynamic'}},
+    {path:'allorders/:id',loadComponent:()=>import("./pages/allorders/allorders.component").then((c)=>c.AllordersComponent) ,title:'products' },
     {path:'brands',loadComponent:()=>import("./pages/brands/brands.component").then((c)=>c.BrandsComponent) ,title:'brands'},
     {path:'categories',loadComponent:()=>import("./pages/categories/categories.component").then((c)=>c.CategoriesComponent) ,title:'categories'},
-    {path:'checkout/:id',loadComponent:()=>import("./pages/checkout/checkout.component").then((c)=>c.CheckoutComponent) ,title:'checkout',data:{RenderMode:'dynamic'}},
-    {path:'details/:id',loadComponent:()=>import("./pages//details/details.component").then((c)=>c.DetailsComponent) ,title:'details',data:{RenderMode:'dynamic'}},
+    {path:'checkout/:id',loadComponent:()=>import("./pages/checkout/checkout.component").then((c)=>c.CheckoutComponent) ,title:'checkout'},
+    {path:'details/:id',loadComponent:()=>import("./pages//details/details.component").then((c)=>c.DetailsComponent) ,title:'details' },
     {path:'**',component:NotfoundComponent}
   ]},
 ];
