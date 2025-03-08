@@ -71,10 +71,10 @@
 
         @if (!isLogin()) {
           <li>
-            <a routerLink="/login" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3 rounded-sm text-gray-700 hover:bg-gray-100 transition-colors dark:text-gray-300 dark:hover:bg-gray-700" aria-current="page">{{'nav.login' | translate}}</a>
+            <a routerLink="/login" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3 ms-3 rounded-sm text-gray-700  transition-colors dark:text-gray-300 dark:hover:bg-gray-700" aria-current="page">{{'nav.login' | translate}}</a>
           </li>
           <li>
-            <a routerLink="/register" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3 rounded-sm text-gray-700 hover:bg-gray-100 transition-colors dark:text-gray-300 dark:hover:bg-gray-700" aria-current="page">{{'nav.register' | translate}}</a>
+            <a routerLink="/register" routerLinkActive="bg-green-700 text-white" class="block py-2 px-3 rounded-sm text-gray-700  transition-colors dark:text-gray-300 dark:hover:bg-gray-700" aria-current="page">{{'nav.register' | translate}}</a>
           </li>
         } @else {
           <li>
