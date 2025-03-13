@@ -44,6 +44,7 @@ export class CartComponent implements OnInit{
         next: (res) => {
           this.cartDetails = res.data;
           this.toastrService.success('Item removed successfully', 'Cart');
+          this.cartService.cartNumber.next(res.numOfCartItems)
         },
         error: (err) => {
           console.log(err);
@@ -74,7 +75,9 @@ export class CartComponent implements OnInit{
         next: (res) => {
           if (res.message === 'success') {
             this.cartDetails = {} as ICart;
+            this.cartService.cartNumber.next(0);
             this.toastrService.success('Cart cleared successfully', 'Cart');
+
           }
         },
         error: (err) => {

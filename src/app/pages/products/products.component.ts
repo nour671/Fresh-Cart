@@ -28,7 +28,7 @@ export class ProductsComponent {
 
     ngOnInit(): void {
       this.getProductsData();
-      
+
 
 
     }
@@ -54,7 +54,9 @@ export class ProductsComponent {
       next:(res)=>{
         console.log(res);
         if(res.status ==='success'){
-          this.toastrService.success(res.message ,'Fresh Cart' )
+          this.toastrService.success(res.message ,'Fresh Cart' );
+          this.cartService.cartNumber.next(res.numOfCartItems);
+
 
         }
 
@@ -70,11 +72,11 @@ export class ProductsComponent {
 
   filteredProducts() {
     // console.log(this.searchTerm);
-    
+
     return this.products.filter(prod =>
       prod.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-    
+
   }
 
 
