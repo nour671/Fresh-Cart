@@ -15,7 +15,11 @@ import { HttpLoaderFactory } from './core/utils/httpLoadFiles';
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay()), provideHttpClient(withFetch(), withInterceptors([headersInterceptor , errorsInterceptor , loadingInterceptor])),provideAnimations(),provideToastr(),importProvidersFrom(NgxSpinnerModule , TranslateModule.forRoot({
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch(), withInterceptors([headersInterceptor , errorsInterceptor , loadingInterceptor]))
+    ,provideAnimations(),provideToastr()
+    ,importProvidersFrom(NgxSpinnerModule , TranslateModule.forRoot({
     defaultLanguage:'en',
     loader: {
       provide: TranslateLoader,

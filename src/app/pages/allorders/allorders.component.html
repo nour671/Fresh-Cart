@@ -19,13 +19,27 @@
               <th class="py-3 px-4 text-left font-semibold">Delivery</th>
             </tr>
           </thead>
+
+          <!-- <tbody>
+            @for (order of data; track $index) {
+            <tr class="border-b">
+                <td class="py-3 px-4">{{order.user.name}}</td>
+                <td class="py-3 px-4">{{order.shippingAddress?.city}}</td>
+                <td class="py-3 px-4">{{order.createdAt|date:'dd/MM/yyyy'  }}</td>
+                <td class="py-3 px-4">{{order.totalOrderPrice|currency:'$'}}</td>
+                <td class="py-3 px-4 text-green-600">Completed</td>
+
+            </tr>
+            }
+        </tbody> -->
+
           <tbody>
             <tr
               *ngFor="let order of data"
               (click)="router.navigate(['/allorders', order._id])"
               class="border-b hover:bg-gray-50 cursor-pointer"
             >
-              <!-- <td class="py-3 px-4">{{ order._id }}</td> -->
+
               <td class="py-3 px-4">{{ order.user.phone || order.shippingAddress?.phone || 'N/A' }}</td>
               <td class="py-3 px-4">{{ order.totalOrderPrice | currency }}</td>
               <td class="py-3 px-4">
@@ -40,6 +54,8 @@
               </td>
             </tr>
           </tbody>
+
+
         </table>
       </div>
       <ng-template #noOrders>

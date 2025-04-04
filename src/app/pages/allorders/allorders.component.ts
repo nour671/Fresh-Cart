@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 import { initFlowbite } from 'flowbite';
 import { OrdersService } from './../../core/services/orders/orders.service';
 import { IOrder, ShippingAddress, OrdersResponse } from '../../shared/interfaces/iorder';
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-allorders',
@@ -21,6 +22,7 @@ export class AllordersComponent implements OnInit {
   isLoading = false;
   private readonly ordersService = inject(OrdersService);
   private readonly toastrService = inject(ToastrService);
+  private readonly authService = inject(AuthService);
   private readonly activatedRoute = inject(ActivatedRoute);
   public  router = inject(Router);
 
@@ -32,6 +34,8 @@ export class AllordersComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadInitialData();
+    this.authService.saveUserData();
+    this.getOrderDetails(this.orderId!);
   }
   ngAfterViewInit() :void {
     initFlowbite();
@@ -123,3 +127,6 @@ export class AllordersComponent implements OnInit {
     this.router.navigate(['/allorders']);
   }
 }
+
+
+

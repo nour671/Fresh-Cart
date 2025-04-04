@@ -20,6 +20,16 @@ export class OrdersService {
     return new HttpHeaders().set('token', token);
   }
 
+  CreateCashOrder(data:object,id:string):Observable<any>{
+    return this.httpClient.post(`${environment.baseUrl}/api/v1/orders/${id}`,{
+      "shippingAddress":data
+    })
+  }
+
+
+
+
+
   getAllOrders(): Observable<any> {
     return this.httpClient.get(`${environment.baseUrl}/api/v1/orders/` , {
       // headers:this.getAuthHeaders()
