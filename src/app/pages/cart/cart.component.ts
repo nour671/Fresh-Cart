@@ -72,6 +72,7 @@ export class CartComponent implements OnInit{
     const confirmation = confirm('Are you sure you want to clear all items from the cart?');
     if (confirmation) {
       this.cartService.clearCart().subscribe({
+        
         next: (res) => {
           if (res.message === 'success') {
             this.cartDetails = {} as ICart;
