@@ -65,7 +65,7 @@ Visit: `http://localhost:4200/`
 
 ## 👩‍💻 Author
 
-- **Nour Shawky**  
+- **Nour Shawky**
 - [GitHub Profile](https://github.com/nour671)
 
 ---
